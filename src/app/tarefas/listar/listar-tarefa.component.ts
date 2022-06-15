@@ -14,11 +14,26 @@ export class ListarTarefaComponent implements OnInit {
   constructor(private tarefaService: TarefaService) { }
 
   ngOnInit(): void {
-    this.tarefas = this.ListarTodos();
+    this.tarefas = this.listarTodos();
   }
 
-  ListarTodos(): Tarefa[] {
+  listarTodos(): Tarefa[] {
     return this.tarefaService.listarTodos();
+  }
+
+  remover($event: any, tarefa: Tarefa): void {
+    $event.preventDefault();
+      if(confirm('Deseja remover a tarefa "' + tarefa.nome + '"?')){
+        this.tarefaService.remover(tarefa.id);
+        this.tarefas = this.listarTodos();
+      }
+  }
+
+  alterarStatus(tarefa: Tarefa): void {
+    if(confirm('Deseja alterar o status da tarefa "' + tarefa.nome + '"?')){
+      this.tarefaService.alterarStatus(tarefa.id);
+      this.tarefas = this.listarTodos();
+    }
   }
 
 }

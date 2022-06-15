@@ -1,10 +1,9 @@
-dform
-<h1>Cadastrar Tarefa</h1>
+<h1>Editar tarefa</h1>
 
 <div class="well">
   <form #formTarefa="ngForm">
     <div class="form-group">
-      <label for="nome">Tarefa</label>
+      <label for="nome">Tarefa:</label>
       <input
         type="text"
         class="form-control"
@@ -19,7 +18,7 @@ dform
         *ngIf="nome.errors && (nome.dirty || nome.touched)"
         class="alert alert-danger"
       >
-        <div [hidden]="!nome.errors.required">Digite a tarefa</div>
+        <div [hidden]="!nome.errors.required">Digite a tarefa.</div>
         <div [hidden]="!nome.errors.minlength">
           A tarefa deve conter ao menos 5 caracteres.
         </div>
@@ -29,17 +28,17 @@ dform
       <input
         type="submit"
         class="btn btn-success"
-        (click)="cadastrar()"
-        value="Cadastrar"
-        [disabled]="!formTarefa.form.valid"
-      />
-      <a [routerLink]="['/tarefas']" class="btn btn-default">
+        (click)="atualizar()"
+        value="Atualizar"
+        [disabled]="!formTarefa.form.valid"  />
+      <a  [routerLink]="['/tarefas']"
+      class="btn btn-default">
         <span
           class="glyphicon glyphicon-chevron-left"
           aria-hidden="true"
         ></span>
-        Voltar</a
-      >
+        Voltar
+      </a>
     </div>
   </form>
 </div>
