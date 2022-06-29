@@ -1,0 +1,30 @@
+.title{
+  text-align: center;
+  font-size: 28px;
+  font-family: monospace;
+  font-weight: bold;
+  margin-bottom:2rem;
+}
+
+.card-text{
+  width: 70%;
+}
+
+.btn-primary{
+  font-size:12px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 4px !important;
+}
+
+.btn-danger{
+  font-size:12px;
+  text-align: center;
+  margin: 10px 0px 10px 10px;
+  border-radius: 4px !important;
+}
+
+.default{
+  margin: 2rem;
+
+}
